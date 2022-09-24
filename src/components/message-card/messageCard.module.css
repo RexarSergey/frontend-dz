@@ -1,0 +1,39 @@
+.block {
+    color: gray;
+}
+
+.card {
+    margin: 0 auto;
+    width: 30%;
+    height: auto;
+    max-width: 500px;
+    overflow-wrap: break-word;
+    background-color: #61dafb;
+    border: 3px solid black;
+}
+
+.content {
+    text-align: start;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.likesInfo {
+    text-align: end;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.buttonPosition {
+    display: flex;
+    justify-content: end;
+}
+
+.button {
+    width: 50px;
+    height: 30px;
+    font-size: 16px;
+    margin: 0 5px 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
