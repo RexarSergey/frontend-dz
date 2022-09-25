@@ -1,5 +1,5 @@
 import './App.css';
-import {MessageCard} from "./components/message-card/messageCard";
+import {MessageCard} from "./components/message-card/message-card";
 import mockData from "./assets/mock-data"
 
 

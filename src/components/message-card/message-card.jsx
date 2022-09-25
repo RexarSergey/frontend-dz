@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import s from "./messageCard.module.css"
+import s from "./message-card.module.css"
 
 
 export function MessageCard(props) {
@@ -37,13 +37,12 @@ export function MessageCard(props) {
                     <div
                         className={s.button}
                         style={{
-                            backgroundColor: state ? 'red' : 'gray'
+                            backgroundColor: state ? '#ff0000' : '#808080'
                         }}
                         onClick={push}>Like
                     </div>
                 </div>
             </div>
-            <br/>
         </>
     )
 }
