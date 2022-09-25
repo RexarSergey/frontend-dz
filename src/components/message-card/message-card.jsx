@@ -2,10 +2,7 @@ import React, {useState} from "react"
 import s from "./message-card.module.css"
 
 
-export function MessageCard(props) {
-    // Object destructuring
-    const {title, text, currentLikes} = props.value
-
+export function MessageCard({title, text, currentLikes}) {
     // useState hook for like counter
     const [counter, setCounter] = useState(currentLikes)
     // useState hook for like button state

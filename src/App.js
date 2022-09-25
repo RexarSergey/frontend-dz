@@ -7,7 +7,8 @@ function App() {
     return (
         // Mapping elements form mock-data
         <div className="App">
-            {mockData.map(item => <MessageCard value={item}/>)}
+            {mockData.map(({title, text, currentLikes}) => <MessageCard title={title} text={text}
+                                                                        currentLikes={currentLikes}/>)}
         </div>
     );
 }
