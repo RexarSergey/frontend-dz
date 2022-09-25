@@ -25,7 +25,6 @@ export function MessageCard({title, text, currentLikes}) {
 
     // Card realization
     return (
-        <>
             <div className={s.card}>
                 <h1>{title}</h1>
                 <p className={s.content}>{text}</p>
@@ -40,6 +39,5 @@ export function MessageCard({title, text, currentLikes}) {
                     </div>
                 </div>
             </div>
-        </>
     )
 }
