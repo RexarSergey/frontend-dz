@@ -1,16 +1,18 @@
 import './App.css';
 import {MessageCard} from "./components/message-card/message-card";
-import mockData from "./assets/mock-data"
+import artiData from "./assets/articles.json"
 
 
 function App() {
     return (
         // Mapping elements form mock-data
         <div className="App">
-            {mockData.map(({title, text, currentLikes}) => <MessageCard
+            {artiData.map(({articleId, title, text, currentLikes, commentsCount}) => <MessageCard
+                articleId={articleId}
                 title={title}
                 text={text}
                 currentLikes={currentLikes}
+                commentsCount={commentsCount}
             />)}
         </div>
     );
