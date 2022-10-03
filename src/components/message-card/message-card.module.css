@@ -6,6 +6,7 @@
     overflow-wrap: break-word;
     background-color: #61dafb;
     border: 3px solid #000000;
+    border-radius: 10px;
 }
 
 .content {
@@ -14,15 +15,14 @@
     font-size: 18px;
 }
 
-.likesInfo {
-    text-align: end;
-    margin-right: 5px;
-    font-size: 16px;
+.container {
+    display: flex;
+    justify-content: space-between;
 }
 
-.buttonPosition {
-    display: flex;
-    justify-content: end;
+.info {
+    margin: 0 5px 5px;
+    font-size: 16px;
 }
 
 .button {
@@ -31,5 +31,5 @@
     font-size: 16px;
     margin: 0 5px 5px;
     border: 2px solid #000000;
-    border-radius: 5px;
+    border-radius: 10px;
 }
