@@ -1,5 +1,6 @@
 import comments from '../../assets/comments.json'
 
+
 const COMMENTS_LOAD_DURATION = 1000;
 
 function selectByArticleId(totalData, id) {

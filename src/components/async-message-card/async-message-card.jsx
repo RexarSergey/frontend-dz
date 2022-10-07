@@ -92,7 +92,8 @@ export function MessageCard({articleId, title, text, currentLikes, commentsCount
                     display: commentsState ? "block" : "none"
                 }}
             >
-                {commentsState ? <AsyncCommentCard articleId={articleId}/> : ""}
+                {commentsState ? <AsyncCommentCard articleId={articleId} setCommentsCounter={setCommentsCounter}/> : ""}
+
             </div>
         </div>
     )
