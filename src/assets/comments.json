@@ -1,30 +1,36 @@
 [
   {
+    "commentId": 0,
     "author": "Sofa",
     "articleId": 33,
     "text": "Comment comment comment"
   },
   {
+    "commentId": 0,
     "author": "Ivan",
     "articleId": 5,
     "text": "Random text from Ivan"
   },
   {
+    "commentId": 1,
     "author": "Oleg",
     "articleId": 5,
     "text": "Long text long text long text long text long text long text"
   },
   {
+    "commentId": 1,
     "author": "Roman",
     "articleId": 33,
     "text": "Short text"
   },
   {
+    "commentId": 0,
     "author": "Bob",
     "articleId": 16,
     "text": "Short text from Bob"
   },
   {
+    "commentId": 0,
     "author": "Roman",
     "articleId": 11,
     "text": "Short text from Frank + random random random"

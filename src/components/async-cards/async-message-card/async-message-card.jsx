@@ -59,11 +59,13 @@ export function LikeBlock({likeCounter, setLikeCounter, likeState, setLikeState}
 }
 
 export function MessageCard({articleId, title, text, currentLikes, commentsCount}) {
+    const [commentsCounter, setCommentsCounter] = useState(commentsCount)
+    const [commentsState, setCommentsState] = useState(false)
+
     const [likeCounter, setLikeCounter] = useState(currentLikes)
     const [likeState, setLikeState] = useState(false)
 
-    const [commentsCounter, setCommentsCounter] = useState(commentsCount)
-    const [commentsState, setCommentsState] = useState(false)
+    const [commentsData, setCommentsData] = useState(null)
 
     return (
         <div className={s.card}>
@@ -89,8 +91,9 @@ export function MessageCard({articleId, title, text, currentLikes, commentsCount
                     display: commentsState ? "block" : "none"
                 }}
             >
-                {commentsState ? <AsyncCommentCard articleId={articleId} setCommentsCounter={setCommentsCounter}/> : ""}
-
+                {commentsState ? <AsyncCommentCard commentsData={commentsData} articleId={articleId}
+                                                   setCommentsData={setCommentsData}
+                                                   setCommentsCounter={setCommentsCounter}/> : ""}
             </div>
         </div>
     )
