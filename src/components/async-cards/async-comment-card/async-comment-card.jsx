@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
-import {getComments} from "../helpers/get-comments-by-article";
-import {InputCommentCard} from "../input-comment-card/input-comment-card";
+import {getComments} from "../../helpers/get-comments-by-article";
+import {InputCommentCard} from "../../input-forms/input-comment-card/input-comment-card";
 import s from "./async-comment-card.module.css";
 
 
@@ -10,7 +10,7 @@ const initialValues = {
     text: "",
 }
 
-export function CommentCard({author, articleId, text}) {
+export function CommentCard({author, text}) {
     const authorInfo = `Author: ${author}`;
 
     return (
@@ -45,7 +45,6 @@ export function AsyncCommentCard({articleId: Id, setCommentsCounter}) {
         ? <div> {data.map(({author, articleId, text}) =>
             <CommentCard
                 author={author}
-                articleId={articleId}
                 text={text}
             />
         )}

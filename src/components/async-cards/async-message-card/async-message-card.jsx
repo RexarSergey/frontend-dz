@@ -3,7 +3,7 @@ import {AsyncCommentCard} from "../async-comment-card/async-comment-card";
 import s from "./async-message-card.module.css";
 
 
-export function CommentBlock({commentsCount, commentsCounter, setCommentsCounter, commentsState, setCommentsState}) {
+export function CommentBlock({commentsCounter, commentsState, setCommentsState}) {
     const commentsInfo = `Current comments: ${commentsCounter}`
 
     const pushCommentButton = () => {
@@ -16,7 +16,7 @@ export function CommentBlock({commentsCount, commentsCounter, setCommentsCounter
     }
 
     return (
-        <>
+        <div className={s.commentBlock}>
             <p className={s.info}>{commentsInfo}</p>
             <div
                 className={s.button}
@@ -25,11 +25,11 @@ export function CommentBlock({commentsCount, commentsCounter, setCommentsCounter
                 }}
                 onClick={pushCommentButton}>{commentsState ? "Hide" : "Show"}
             </div>
-        </>
+        </div>
     )
 }
 
-export function LikeBlock({currentLikes, likeCounter, setLikeCounter, likeState, setLikeState}) {
+export function LikeBlock({likeCounter, setLikeCounter, likeState, setLikeState}) {
     const likeInfo = `Current likes: ${likeCounter}`
 
     const pushLikeButton = () => {
@@ -44,7 +44,7 @@ export function LikeBlock({currentLikes, likeCounter, setLikeCounter, likeState,
     }
 
     return (
-        <>
+        <div className={s.likeBlock}>
             <p className={s.info}>{likeInfo}</p>
             <div
                 className={s.button}
@@ -54,7 +54,7 @@ export function LikeBlock({currentLikes, likeCounter, setLikeCounter, likeState,
                 }}
                 onClick={pushLikeButton}>Like
             </div>
-        </>
+        </div>
     )
 }
 
@@ -72,14 +72,11 @@ export function MessageCard({articleId, title, text, currentLikes, commentsCount
 
             <div className={s.container}>
                 <CommentBlock
-                    commentsCount={commentsCount}
                     commentsCounter={commentsCounter}
-                    setCommentsCounter={setCommentsCounter}
                     commentsState={commentsState}
                     setCommentsState={setCommentsState}
                 />
                 <LikeBlock
-                    currentLikes={currentLikes}
                     likeCounter={likeCounter}
                     setLikeCounter={setLikeCounter}
                     likeState={likeState}

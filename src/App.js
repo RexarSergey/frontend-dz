@@ -1,7 +1,6 @@
+import React from "react";
 import './App.css';
-import {MessageCard} from "./components/message-card/message-card";
-import {AsyncRealization} from "./components/async-realization/async-realization"
-import artiData from "./assets/articles.json"
+import {AsyncRealization} from "./components/async-cards/async-realization/async-realization"
 
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
                 currentLikes={currentLikes}
                 commentsCount={commentsCount}
             />)}*/}
-            {/*<AsyncCard dataSize={artiData.length}/>*/}
             <AsyncRealization/>
         </div>
     );

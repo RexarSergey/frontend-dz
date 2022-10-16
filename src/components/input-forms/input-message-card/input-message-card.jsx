@@ -2,7 +2,7 @@ import React from "react";
 import s from "./input-message-card.module.css"
 
 export const InputMessageCard = ({data, onChange}) => (
-    <form>
+    <form className="Form">
         <input
             value={data.articleId}
             onChange={onChange}
