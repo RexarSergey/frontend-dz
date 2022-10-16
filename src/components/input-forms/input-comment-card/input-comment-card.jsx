@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./input-comment-card.module.css"
+
 
 export const InputCommentCard = ({value, onChange}) => (
     <form>

@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./input-message-card.module.css"
+
 
 export const InputMessageCard = ({data, onChange}) => (
     <form className="Form">
