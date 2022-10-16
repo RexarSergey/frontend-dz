@@ -20,6 +20,15 @@
     justify-content: space-between;
 }
 
+.likeBlock .commentBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.commentBlock {
+    align-items: end;
+}
+
 .info {
     margin: 0 5px 5px;
     font-size: 16px;

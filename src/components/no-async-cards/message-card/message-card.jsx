@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import {CommentCard} from "../comment-card/comment-card";
 import s from "./message-card.module.css"
-import commData from "../../assets/comments.json"
+import commData from "../../../assets/comments.json"
 
 
 export function MessageCard({articleId: Id, title, text, currentLikes, commentsCount}) {

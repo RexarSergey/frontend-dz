@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react"
-import {getArticles} from "../helpers/get-articles"
+import {getArticles} from "../../helpers/get-articles"
 import {MessageCard} from "../async-message-card/async-message-card";
-import {InputMessageCard} from "../input-message-card/input-message-card"
+import {InputMessageCard} from "../../input-forms/input-message-card/input-message-card"
 
 
 const initialValues = {
