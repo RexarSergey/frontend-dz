@@ -50,7 +50,6 @@ export function LikeBlock({likeCounter, setLikeCounter, likeState, setLikeState}
                 className={s.button}
                 style={{
                     backgroundColor: likeState ? '#ff0000' : '#808080',
-                    float: "right"
                 }}
                 onClick={pushLikeButton}>Like
             </div>

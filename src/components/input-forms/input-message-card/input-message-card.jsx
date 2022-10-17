@@ -4,12 +4,6 @@ import React from "react";
 export const InputMessageCard = ({data, onChange}) => (
     <form className="Form">
         <input
-            value={data.articleId}
-            onChange={onChange}
-            name="articleId"
-            placeholder={"Article Id"}
-        />
-        <input
             value={data.title}
             onChange={onChange}
             name="title"

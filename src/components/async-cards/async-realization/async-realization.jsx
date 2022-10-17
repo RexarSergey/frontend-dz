@@ -5,7 +5,7 @@ import {InputMessageCard} from "../../input-forms/input-message-card/input-messa
 
 
 const initialValues = {
-    articleId: 100,
+    articleId: Math.floor(Math.random() * 100),
     title: "",
     text: "",
     currentLikes: 0,
@@ -44,5 +44,5 @@ export function AsyncRealization() {
             />
             <button onClick={pushLine}>Push</button>
         </div>
-        : <div> NO DATA </div>
+        : <div> Loading DATA... </div>
 }
