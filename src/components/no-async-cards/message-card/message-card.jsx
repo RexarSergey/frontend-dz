@@ -34,12 +34,7 @@ export function MessageCard({articleId: Id, title, text, currentLikes, commentsC
 
     //
     const pushCommentButton = () => {
-        if (commentsState) {
-            setCommentsState(false)
-            return
-        }
-
-        setCommentsState(true)
+         setCommentsState(oldState => !oldState)
     }
 
 
@@ -67,7 +62,6 @@ export function MessageCard({articleId: Id, title, text, currentLikes, commentsC
                         className={s.button}
                         style={{
                             backgroundColor: likeState ? '#ff0000' : '#808080',
-                            float: "right"
                         }}
                         onClick={pushLikeButton}>Like
                     </div>
