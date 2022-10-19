@@ -1,0 +1,15 @@
+@import "params.module";
+@import "mixins.module";
+
+.card {
+  margin: 5px;
+  max-width: 500px;
+  overflow-wrap: break-word;
+  background-color: #ffffff;
+  border: 3px solid $border-primary-color;
+  border-radius: $border-primary-radius;
+}
+
+.content {
+  @include content($primary-fond-size);
+}

@@ -1,0 +1,47 @@
+@import "params.module";
+@import "mixins.module";
+
+.card {
+  margin: 0 auto 10px;
+
+  width: 30%;
+  height: auto;
+  max-width: 500px;
+
+  background-color: #61dafb;
+  border: 3px solid $border-primary-color;
+  border-radius: $border-primary-radius;
+}
+
+//.info
+.content,
+.info {
+  @include content($primary-fond-size);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.likeBlock,
+.commentBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.commentBlock {
+  align-items: end;
+}
+
+.likeBlock {
+  .button {
+    @include button(left, $primary-fond-size, $border-primary-color, $border-primary-radius);
+  }
+}
+
+.commentBlock {
+  .button {
+    @include button(right, $primary-fond-size, $border-primary-color, $border-primary-radius);
+  }
+}

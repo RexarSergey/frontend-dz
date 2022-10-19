@@ -1,0 +1,17 @@
+@mixin content ($font-size){
+  text-align: start;
+  margin-left: 10px;
+  font-size: $font-size;
+}
+
+@mixin button ($float, $fond-size, $color, $radius) {
+  margin: 0 5px 5px;
+  float: $float;
+
+  width: 50px;
+  height: 30px;
+
+  font-size: $fond-size;
+  border: 2px solid $color;
+  border-radius: $radius;
+}
