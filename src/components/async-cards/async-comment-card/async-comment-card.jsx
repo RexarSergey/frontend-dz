@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from "react";
-import {getComments} from "../../helpers/get-comments-by-article";
-import {getMaxCommentId} from "../../helpers/get-max-comment-id";
-import {InputCommentCard} from "../../input-forms/input-comment-card/input-comment-card";
-import s from "./async-comment-card.module.css";
-
+import React, {useEffect, useState} from "react"
+import {getComments} from "../../helpers/get-comments-by-article"
+import {getMaxCommentId} from "../../helpers/get-max-comment-id"
+import {InputCommentCard} from "../../input-forms/input-comment-card/input-comment-card"
+//import s from "./async-comment-card.module.css"
+import s from "../../../styles/async-comment-card.module.scss"
 
 const initialValues = {
     commentId: getMaxCommentId(),
@@ -13,7 +13,7 @@ const initialValues = {
 }
 
 export function CommentCard({deleteComment, author, text}) {
-    const authorInfo = `Author: ${author}`;
+    const authorInfo = `Author: ${author}`
 
     return (
         <div className={s.card}>
