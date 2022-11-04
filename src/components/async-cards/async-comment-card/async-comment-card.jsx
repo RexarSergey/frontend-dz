@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react";
 import {getComments} from "../../helpers/get-comments-by-article";
-import {getMaxCommentId} from "../../helpers/get-max-comment-id";
+import {generateUniqueId} from "../../helpers/generate-unique-id";
 import {InputCommentCard} from "../../input-forms/input-comment-card/input-comment-card";
 import s from "./async-comment-card.module.css";
 
 
 const initialValues = {
-    commentId: getMaxCommentId(),
+    commentId: generateUniqueId(),
     author: "",
     articleId: 0,
     text: "",
@@ -40,7 +40,7 @@ export function AsyncCommentCard({commentsData, articleId, setCommentsData, setC
     }
 
     const pushLine = () => {
-        setLine(oldLine => ({...oldLine, [("commentId")]: getMaxCommentId(commentsData)}))
+        setLine(oldLine => ({...oldLine, [("commentId")]: generateUniqueId(commentsData)}))
 
         setCommentsData(oldData => [...oldData, line])
         setCommentsCounter(oldCounter => oldCounter + 1)
