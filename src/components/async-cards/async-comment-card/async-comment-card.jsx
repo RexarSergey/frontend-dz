@@ -3,7 +3,7 @@ import {getComments} from "../../helpers/get-comments-by-article"
 import {getMaxCommentId} from "../../helpers/get-max-comment-id"
 import {InputCommentCard} from "../../input-forms/input-comment-card/input-comment-card"
 //import s from "./async-comment-card.module.css"
-import s from "../../../styles/async-comment-card.module.scss"
+import s from "./async-comment-card.module.scss"
 
 const initialValues = {
     commentId: getMaxCommentId(),
