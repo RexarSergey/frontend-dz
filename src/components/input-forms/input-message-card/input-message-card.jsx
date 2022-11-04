@@ -19,25 +19,25 @@ export function InputMessageCard({setData}) {
     const onTitleChange = event => {
         const {value} = event.target
         setMessageTitle(value)
-        setLine({...line, ["title"]:value})
+        setLine({...line, title:value})
     }
 
     const onTextChange = event => {
         const {value} = event.target
         setMessageText(value)
-        setLine({...line, ["text"]:value})
+        setLine({...line, text:value})
     }
 
     const onLikesChange = event => {
         const {value} = event.target
         setMessageLikes(value)
-        setLine({...line, ["currentLikes"]:value})
+        setLine({...line, currentLikes:value})
     }
 
     const onCommentsChange = event => {
         const {value} = event.target
         setMessageComments(value)
-        setLine({...line, ["commentsCount"]:value})
+        setLine({...line, commentsCount:value})
     }
 
     const pushLine = () => {
