@@ -20,8 +20,12 @@
     justify-content: space-between;
 }
 
+<<<<<<< HEAD
 .likeBlock,
 .commentBlock {
+=======
+.likeBlock .commentBlock {
+>>>>>>> main
     display: flex;
     flex-direction: column;
 }
@@ -42,5 +46,9 @@
     margin: 0 5px 5px;
     border: 2px solid #000000;
     border-radius: 10px;
+<<<<<<< HEAD
     float: left;
+=======
+    float: right;
+>>>>>>> main
 }
