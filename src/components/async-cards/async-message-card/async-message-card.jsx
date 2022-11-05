@@ -1,6 +1,7 @@
-import React, {useState} from "react";
-import {AsyncCommentCard} from "../async-comment-card/async-comment-card";
-import s from "./async-message-card.module.css";
+import React, {useState} from "react"
+import {AsyncCommentCard} from "../async-comment-card/async-comment-card"
+//import s from "./async-message-card.module.css"
+import s from "./async-message-card.module.scss"
 
 
 export function CommentBlock({commentsCounter, commentsState, setCommentsState}) {

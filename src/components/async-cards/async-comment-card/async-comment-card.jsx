@@ -13,7 +13,8 @@ const initialValues = {
 }
 
 export function CommentCard({deleteComment, author, text}) {
-    const authorInfo = `Author: ${author}`;
+
+    const authorInfo = `Author: ${author}`
 
     return (
         <div className={s.card}>
@@ -40,6 +41,7 @@ export function AsyncCommentCard({commentsData, articleId, setCommentsData, setC
     }
 
     const pushLine = () => {
+
         setLine(oldLine => ({...oldLine, [("commentId")]: generateUniqueId(commentsData)}))
 
         setCommentsData(oldData => [...oldData, line])
