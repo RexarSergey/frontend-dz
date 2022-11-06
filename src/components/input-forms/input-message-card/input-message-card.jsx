@@ -1,8 +1,11 @@
 import React, {useState} from "react";
+import {generateUniqueId} from "../../helpers/generate-unique-id";
+import {getCurrentDate} from "../../helpers/get-current-date";
 
 const initialValues = {
-    articleId: Math.floor(Math.random() * 100),
-    title: "",
+    articleId: generateUniqueId(),
+    date: getCurrentDate(),
+    title: {text: "", showInputElem: false},
     text: "",
     currentLikes: 0,
     commentsCount: 0
@@ -11,10 +14,10 @@ const initialValues = {
 export function InputMessageCard({setData}) {
 
     const [line, setLine] = useState(initialValues)
-    const [messageTitle, setMessageTitle] = useState(initialValues.title)
+    const [messageTitle, setMessageTitle] = useState(initialValues.title.text)
     const [messageText, setMessageText] = useState(initialValues.text)
-    const [messageLikes, setMessageLikes] = useState(initialValues.currentLikes)
-    const [messageComments, setMessageComments] = useState(initialValues.commentsCount)
+    // const [messageLikes, setMessageLikes] = useState(initialValues.currentLikes)
+    // const [messageComments, setMessageComments] = useState(initialValues.commentsCount)
 
     const onTitleChange = event => {
         const {value} = event.target
@@ -28,17 +31,17 @@ export function InputMessageCard({setData}) {
         setLine({...line, text:value})
     }
 
-    const onLikesChange = event => {
-        const {value} = event.target
-        setMessageLikes(value)
-        setLine({...line, currentLikes:value})
-    }
-
-    const onCommentsChange = event => {
-        const {value} = event.target
-        setMessageComments(value)
-        setLine({...line, commentsCount:value})
-    }
+    // const onLikesChange = event => {
+    //     const {value} = event.target
+    //     setMessageLikes(value)
+    //     setLine({...line, currentLikes:value})
+    // }
+    //
+    // const onCommentsChange = event => {
+    //     const {value} = event.target
+    //     setMessageComments(value)
+    //     setLine({...line, commentsCount:value})
+    // }
 
     const pushLine = () => {
         setData(oldData => [...oldData, line])
@@ -57,16 +60,16 @@ export function InputMessageCard({setData}) {
                     onChange={onTextChange}
                     placeholder={"Text"}
                 />
-                <input
-                    value={messageLikes}
-                    onChange={onLikesChange}
-                    placeholder={"Current Likes"}
-                />
-                <input
-                    value={messageComments}
-                    onChange={onCommentsChange}
-                    placeholder={"Comments Count"}
-                />
+                {/*<input*/}
+                {/*    value={messageLikes}*/}
+                {/*    onChange={onLikesChange}*/}
+                {/*    placeholder={"Current Likes"}*/}
+                {/*/>*/}
+                {/*<input*/}
+                {/*    value={messageComments}*/}
+                {/*    onChange={onCommentsChange}*/}
+                {/*    placeholder={"Comments Count"}*/}
+                {/*/>*/}
             </form>
             <button onClick={pushLine}>Push</button>
         </>

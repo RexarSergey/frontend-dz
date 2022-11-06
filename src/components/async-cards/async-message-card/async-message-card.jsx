@@ -1,64 +1,12 @@
 import React, {useState} from "react"
+import {ElementEditable} from "../../helpers/element-editable"
 import {AsyncCommentCard} from "../async-comment-card/async-comment-card"
-//import s from "./async-message-card.module.css"
-import s from "./async-message-card.module.scss"
+import {CommentSection} from "../sections/comment-section"
+import {LikeSection} from "../sections/like-section"
+import s from "../styles/message-card-style.module.scss"
 
 
-export function CommentBlock({commentsCounter, commentsState, setCommentsState}) {
-    const commentsInfo = `Current comments: ${commentsCounter}`
-
-    const pushCommentButton = () => {
-        if (commentsState) {
-            setCommentsState(false)
-            return
-        }
-
-        setCommentsState(true)
-    }
-
-    return (
-        <div className={s.commentBlock}>
-            <p className={s.info}>{commentsInfo}</p>
-            <div
-                className={s.button}
-                style={{
-                    backgroundColor: commentsState ? '#808080' : '#61dafb'
-                }}
-                onClick={pushCommentButton}>{commentsState ? "Hide" : "Show"}
-            </div>
-        </div>
-    )
-}
-
-export function LikeBlock({likeCounter, setLikeCounter, likeState, setLikeState}) {
-    const likeInfo = `Current likes: ${likeCounter}`
-
-    const pushLikeButton = () => {
-        if (likeState) {
-            setLikeCounter(oldCounter => oldCounter - 1)
-            setLikeState(false)
-            return
-        }
-
-        setLikeCounter(oldCounter => oldCounter + 1)
-        setLikeState(true)
-    }
-
-    return (
-        <div className={s.likeBlock}>
-            <p className={s.info}>{likeInfo}</p>
-            <div
-                className={s.button}
-                style={{
-                    backgroundColor: likeState ? '#ff0000' : '#808080',
-                }}
-                onClick={pushLikeButton}>Like
-            </div>
-        </div>
-    )
-}
-
-export function MessageCard({articleId, title, text, currentLikes, commentsCount}) {
+export function MessageCard({articleId, date, title, text, currentLikes, commentsCount}) {
     const [commentsCounter, setCommentsCounter] = useState(commentsCount)
     const [commentsState, setCommentsState] = useState(false)
 
@@ -67,24 +15,42 @@ export function MessageCard({articleId, title, text, currentLikes, commentsCount
 
     const [commentsData, setCommentsData] = useState(null)
 
+    const [t, setTitle] = useState(title)
+    const [showInputElem, setShowInputElem] = useState(false)
+
+    const dateInfo = `Card created: ${date}`
+
     return (
         <div className={s.card}>
-            <h1>{title}</h1>
+            <div className={s.date}>{dateInfo}</div>
+
+            <h1>
+                <ElementEditable
+                    value={t}
+                    showInputEle={showInputElem}
+                    onChange={(e) => setTitle(e.target.value)}
+                    onBlur={() => setShowInputElem(false)}
+                    onDoubleClick={() => setShowInputElem(true)}
+                />
+            </h1>
+
             <p className={s.content}>{text}</p>
 
             <div className={s.container}>
-                <CommentBlock
+                <CommentSection
                     commentsCounter={commentsCounter}
                     commentsState={commentsState}
                     setCommentsState={setCommentsState}
                 />
-                <LikeBlock
+                <LikeSection
                     likeCounter={likeCounter}
                     setLikeCounter={setLikeCounter}
                     likeState={likeState}
                     setLikeState={setLikeState}
                 />
             </div>
+
+
 
             <div
                 style={{
