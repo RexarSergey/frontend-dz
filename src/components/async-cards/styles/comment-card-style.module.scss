@@ -1,5 +1,5 @@
-@import "../styles/params.module";
-@import "../styles/mixins.module";
+@import "params.module";
+@import "mixins.module";
 
 .card {
   margin: 5px;
@@ -12,4 +12,9 @@
 
 .content {
   @include content($primary-fond-size);
+}
+
+.date {
+  float: right;
+  margin-right: 5px;
 }
